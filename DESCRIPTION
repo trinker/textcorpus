@@ -1,0 +1,18 @@
+Package: textcorpus
+Title: A Community Based Text Corpus Data Store
+Version: 0.0.1
+Authors@R: c(person("Tyler", "Rinker", email =
+        "tyler.rinker@gmail.com", role = c("aut", "cre")))
+Maintainer: Tyler Rinker <tyler.rinker@gmail.com>
+Description: Contains text corpus data sets and tools for easy
+        community additions of new data sets.
+Depends: R (>= 3.3.2)
+Imports: clipr, dplyr, stringi
+Suggests: testthat
+Date: 2017-03-05
+License: GPL-2
+LazyData: TRUE
+Roxygen: list(wrap = FALSE)
+RoxygenNote: 5.0.1
+URL: http://github.com/trinker/textcorpus
+BugReports: http://github.com/trinker/textcorpus/issues
