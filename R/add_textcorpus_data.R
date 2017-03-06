@@ -47,14 +47,7 @@ description_template <- function(copy2clip = TRUE) {
 
 
 
-# x <- list(
-#     data = "presidential_debates",
-#     genre = "debate",
-#     subgenre = "political",
-#     source = "http://www.presidency.ucsb.edu",
-#     submitted_by = "Tyler Rinker",
-#     submitted_on = Sys.Date()
-# )
+
 
 
 
