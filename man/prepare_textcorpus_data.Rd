@@ -42,4 +42,3 @@ corp <- data_frame(
 prepare_textcorpus_data(corp)
 prepare_textcorpus_data(corp, corpus.cols = c('id', 'author', 'text', 'state'))
 }
-

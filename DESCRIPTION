@@ -7,12 +7,12 @@ Maintainer: Tyler Rinker <tyler.rinker@gmail.com>
 Description: Contains text corpus data sets and tools for easy
         community additions of new data sets.
 Depends: R (>= 3.3.2)
-Imports: clipr, dplyr, stringi
+Imports: clipr, dplyr, stringi, textshape
 Suggests: testthat
 Date: 2017-03-05
 License: GPL-2
 LazyData: TRUE
 Roxygen: list(wrap = FALSE)
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 URL: http://github.com/trinker/textcorpus
 BugReports: http://github.com/trinker/textcorpus/issues

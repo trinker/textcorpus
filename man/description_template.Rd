@@ -16,4 +16,3 @@ Description
 \examples{
 description_template(FALSE)
 }
-

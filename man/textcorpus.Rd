@@ -2,11 +2,10 @@
 % Please edit documentation in R/textcorpus-package.R
 \docType{package}
 \name{textcorpus}
-\alias{package-textcorpus}
 \alias{textcorpus}
+\alias{package-textcorpus}
 \alias{textcorpus-package}
 \title{A Community Based Text Corpus Data Store}
 \description{
 Contains text corpus data sets and tools for easy community additions of new data sets.
 }
-

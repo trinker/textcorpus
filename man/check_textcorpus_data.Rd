@@ -43,4 +43,3 @@ corp <- data_frame(
 check_textcorpus_data(corp)
 check_textcorpus_meta_data(corp, corp[c('id', 'state', 'month')])
 }
-
