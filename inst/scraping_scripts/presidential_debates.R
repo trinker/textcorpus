@@ -171,7 +171,8 @@ presidential_debates_primed <- lapply(links, function(x){
     )
 
 pacman::p_load_current_gh('trinker/textcorpus')
-presidential_debates <- prepare_textcorpus_data(presidential_debates_primed)
+presidential_debates <- prepare_textcorpus_data(presidential_debates_primed,
+    c("id", "author", "text", "order"))
 
 
 desc_dat <- list(
@@ -182,5 +183,8 @@ desc_dat <- list(
     submitted_by = "Tyler Rinker",
     submitted_on = Sys.Date()
 )
+
+
+add_textcorpus_data(presidential_debates, desc_dat)
 
 

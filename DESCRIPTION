@@ -7,7 +7,7 @@ Maintainer: Tyler Rinker <tyler.rinker@gmail.com>
 Description: Contains text corpus data sets and tools for easy
         community additions of new data sets.
 Depends: R (>= 3.3.2)
-Imports: clipr, dplyr, stringi, textshape
+Imports: clipr, dplyr, stringi, textshape, tidyr
 Suggests: testthat
 Date: 2017-03-05
 License: GPL-2

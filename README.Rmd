@@ -18,7 +18,10 @@ verbadge <- sprintf('<a href="https://img.shields.io/badge/Version-%s-orange.svg
 [![Coverage Status](https://coveralls.io/repos/trinker/textcorpus/badge.svg?branch=master)](https://coveralls.io/r/trinker/textcorpus?branch=master)
 `r verbadge`
 
-**textcorpus** is...
+**textcorpus** is collection of text courpus datasets.  The package also contains tools to enable easy community contributions to the package.
+
+
+
 
 # Installation
 
