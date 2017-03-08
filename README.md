@@ -1,5 +1,6 @@
--   [Installation](#installation)
--   [Contact](#contact)
+textcorpus   [![Follow](https://img.shields.io/twitter/follow/tylerrinker.svg?style=social)](https://twitter.com/intent/follow?screen_name=tylerrinker)
+============
+
 
 [![Build
 Status](https://travis-ci.org/trinker/textcorpus.svg?branch=master)](https://travis-ci.org/trinker/textcorpus)
@@ -10,8 +11,16 @@ Status](https://coveralls.io/repos/trinker/textcorpus/badge.svg?branch=master)](
 **textcorpus** is collection of text courpus datasets. The package also
 contains tools to enable easy community contributions to the package.
 
+
+Table of Contents
+============
+
+-   [Installation](#installation)
+-   [Contact](#contact)
+
 Installation
 ============
+
 
 To download the development version of **textcorpus**:
 
@@ -27,8 +36,7 @@ the development version:
 Contact
 =======
 
-You are welcome to:  
-- submit suggestions and bug-reports at:
-<https://github.com/trinker/textcorpus/issues>  
-- send a pull request on: <https://github.com/trinker/textcorpus/>  
-- compose a friendly e-mail to: <tyler.rinker@gmail.com>
+You are welcome to:    
+- submit suggestions and bug-reports at: <https://github.com/trinker/textcorpus/issues>    
+- send a pull request on: <https://github.com/trinker/textcorpus/>    
+- compose a friendly e-mail to: <tyler.rinker@gmail.com>    
