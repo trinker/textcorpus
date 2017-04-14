@@ -16,7 +16,10 @@ README.R
 travis.yml
 inst/maintenance.R
 Thumb.db
-inst/textcorpus_logo
+tools/textcorpus_logo/r_textcorpusa.png
+tools/textcorpus_logo/r_textcorpus.pptx
+tools/textcorpus_logo/resize_icon.txt
+inst/staticdocs
 inst/staticdocs
 inst/extra_statdoc
 

@@ -1,0 +1,2 @@
+cd C:\Users\Tyler\GitHub\textcorpus\tools\textcorpus_logo
+ffmpeg -i r_textcorpusa.png -vf scale=250:-1 r_textcorpus.png
