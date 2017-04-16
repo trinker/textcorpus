@@ -9,7 +9,7 @@ Description: Contains text corpus data sets and tools for easy
 Depends: R (>= 3.3.2)
 Imports: clipr, dplyr, stringi, textshape, tidyr
 Suggests: testthat
-Date: 2017-04-14
+Date: 2017-04-16
 License: GPL-2
 LazyData: TRUE
 Roxygen: list(wrap = FALSE)
