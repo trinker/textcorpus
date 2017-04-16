@@ -14,11 +14,22 @@ ver <- gsub(regex, "\\2", desc[loc])
 verbadge <- sprintf('<a href="https://img.shields.io/badge/Version-%s-orange.svg"><img src="https://img.shields.io/badge/Version-%s-orange.svg" alt="Version"/></a></p>', ver, ver)
 ````
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+knit_hooks$set(htmlcap = function(before, options, envir) {
+  if(!before) {
+    paste('<p class="caption"><b><em>',options$htmlcap,"</em></b></p>",sep="")
+    }
+    })
+knitr::opts_knit$set(self.contained = TRUE, cache = FALSE)
+knitr::opts_chunk$set(fig.path = "tools/figure/")
+```
+
 [![Build Status](https://travis-ci.org/trinker/textcorpus.svg?branch=master)](https://travis-ci.org/trinker/textcorpus)
 [![Coverage Status](https://coveralls.io/repos/trinker/textcorpus/badge.svg?branch=master)](https://coveralls.io/r/trinker/textcorpus?branch=master)
 `r verbadge`
 
-**textcorpus** is collection of text courpus datasets.  The package also contains tools to enable easy community contributions to the package.
+**textcorpus** is collection of text courpus datasets.  The package also contains tools to enable easy community contributions to the package.  The underying premise is that the speech level data is stored with meta data as a list of two tibble data frames with a common key column.
 
 
 
@@ -32,6 +43,68 @@ Download the [zip ball](https://github.com/trinker/textcorpus/zipball/master) or
 ```r
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load_gh("trinker/textcorpus")
+```
+
+# Data
+
+```{r, echo=FALSE}
+pacman::p_load(pander)
+pander(description[-4], style = "grid", split.table = Inf, justify = c(rep('left', 4), 'right'))
+```
+
+# Demonstration
+
+## Joining Corpus and Meta Data
+
+**dplyr** akes joining the corpus and meta data easy.
+
+```{r}
+pacman::p_load(tidyverse, sentimentr, formality, readability)
+pacman::p_load_current_gh('trinker/textcorpus')
+
+nixon_tapes
+
+
+dat <- nixon_tapes$corpus %>%
+    dplyr::left_join(nixon_tapes$meta, by = 'id')
+
+dat
+```
+
+## Text Scores
+
+Here we calculate formality, sentiment, and readability measures.  An additional call to **dplyr**'s `left_jon` with a `Reduce` makes it easy to merge the various score frames into one frame.
+
+```{r}
+n_formality <- dat %>%
+    filter(author == "Nixon") %>%
+    with(formality(text, list(author, id, date)))
+
+n_sentiment <- dat %>%
+    filter(author == "Nixon") %>%
+    with(sentiment_by(text, list(author, id, date)))
+
+n_readability <- dat %>%
+    filter(author == "Nixon") %>%
+    with(readability(text, list(author, id, date)))
+
+stats_dat <- list(n_formality, n_sentiment, n_readability) %>%
+    Reduce(function(x, y) left_join(x, y, by=c("author", "id", "date")), .)
+```
+
+## Plotting the Text Scores Across Time
+
+```{r}
+stats_dat %>%
+    select(date, F, ave_sentiment, Average_Grade_Level) %>%
+    rename(Formality = F, Sentiment = ave_sentiment, Readbiltiy = Average_Grade_Level) %>%
+    gather(Measure, Score, -date) %>%
+    mutate(Date = as.factor(date), Date2 = as.numeric(Date)) %>%
+    ggplot(aes(x = Date2, y = Score)) +
+        geom_point() +
+        geom_smooth(span = 0.4, fill = NA) +
+        facet_wrap(~Measure, ncol = 1, scales = 'free_y') 
+
 ```
 
 # Contact
